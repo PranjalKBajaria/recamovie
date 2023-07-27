@@ -5,7 +5,10 @@ const path = require('path');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use('/assets', express.static('assets'));
+app.use('/public', express.static('public'));
+
+const script = express();
+script.use('/public', express.static(path.join('../public')));
 
 app.get("/", (req, res) => {
     res.render('index', {});

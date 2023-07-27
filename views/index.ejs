@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recamovie</title>
-    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
     <section class="text-gray-400 bg-gray-900 body-font relative">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-12">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Rec a Movie</h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">For the times when your food is getting cold and you need something to watch.</p>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">For the times when your food is getting cold and you need something quick...</p>
           </div>
           <div class="lg:w-1/2 md:w-2/3 mx-auto">
             <div class="flex flex-wrap -m-2">
               <div class="p-2 w-full">
                 <div class="relative">
-                  <label for="message" class="leading-7 text-sm text-gray-400">Message</label>
-                  <textarea id="message" name="message" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-pink-500 focus:bg-gray-900 focus:ring-2 focus:ring-pink-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                  <label for="movieInput" class="leading-7 text-sm text-gray-400">Recommend me a movie that ...</label>
+                  <textarea id="movieInput" name="movieInput" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-pink-500 focus:bg-gray-900 focus:ring-2 focus:ring-pink-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                 </div>
               </div>
               <div class="p-2 w-full">
-                <button class="flex mx-auto text-white bg-pink-500 border-0 py-2 px-8 focus:outline-none hover:bg-pink-600 rounded text-lg">Button</button>
+                <button id="findMovie" class="flex mx-auto text-white bg-pink-500 border-0 py-2 px-8 focus:outline-none hover:bg-pink-600 rounded text-lg">Find Movies</button>
               </div>
               <div class="p-2 w-full pt-8 mt-8 border-t border-gray-800 text-center">
                 <a class="text-pink-400">example@email.com</a>
@@ -57,6 +57,7 @@
           </div>
         </div>
       </section>
-    <%- include('footer'); %>
+
+      <script src="/public/script.js"></script>
 </body>
 </html>
