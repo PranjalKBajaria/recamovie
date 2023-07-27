@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/PranjalKBajaria/recamovie#readme",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "openai": "^3.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
