@@ -1,6 +1,5 @@
 import openai from 'https://cdn.jsdelivr.net/npm/openai@3.3.0/+esm'
 
-// Running into bs issues with openai import
 const configuration = new openai.Configuration({
   apiKey: "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",
 });
@@ -12,6 +11,7 @@ const openAI = new openai.OpenAIApi(configuration);
 document.getElementById('findMovie').onclick = async () => {
     const prompt = document.querySelector('#movieInput').value;
     const movies = await queryGPT(prompt);
+    console.log(getMovieDetails(movies[0]));
 }
 
 async function queryGPT(input) {
@@ -25,4 +25,12 @@ async function queryGPT(input) {
   
     const response = JSON.parse(completion.data.choices[0].message.content);
     return response.movieNames;
+  }
+
+  async function getMovieDetails(name) {
+    // get the correct search term using the fillers for spaces
+    const searchterm = name.split(' ').join('%20');
+    const response = await fetch(`https://www.imdb.com/find/?q=${searchterm}`);
+    const body = await response.text();
+    return body;
   }
