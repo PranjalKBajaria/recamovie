@@ -5,26 +5,55 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const searchUrl = 'https://www.imdb.com/find?s=tt&ttype=ft&ref_=fn_ft&q=';
 const movieUrl = 'https://www.imdb.com/title/';
 
-async function searchMovies(movieName){
-    const response = await fetch(`${searchUrl}${movieName}`);
+// Returns the imdbID of the movie, we need this because to access the movie via the URL imdb uses unique IDs
+async function getIMDBId(movieName){
+
+    const response = await fetch(`${searchUrl}${movieName.split(' ').join('%20')}`);
     const body = await response.text();
     const $ = cheerio.load(body);
-    $('.find-result-item').each(function(i, element) {
-        const $element = $(element);
-        const $image = $element.find('.ipc-image');
-        const $title = $element.find('.ipc-metadata-list-summary-item__t');
+    const element = $('.find-result-item').first();
 
-        const imdbID = $title.attr('href').match(/title\/(.*)\//)[1];
+    const $element = $(element);
+    //  Need the title for the imdbID
+    const $title = $element.find('.ipc-metadata-list-summary-item__t');
 
-        const movie = {
-          image: $image.attr('src'),
-          title: $title.text(),
-          imdbID,
-        };
-        console.log(movie);
-    });
+    const imdbID = $title.attr('href').match(/title\/(.*)\//)[1];
+    return imdbID;
+}
+
+async function getPoster(imgUrl, imgID) {
+    const response = await fetch(`${imgUrl}`);
+    const body = await response.text();
+    const $ = cheerio.load(body);
+
+    return $(`[data-image-id="${imgID}-curr"]`).attr('alt');
+}
+
+async function getMovie(imdbID) {
+    const response = await fetch(`${movieUrl}${imdbID}`);
+    const body = await response.text();
+    const $ = cheerio.load(body);
+
+    const title = $('[data-testid="hero__pageTitle"]').text().trim();
+    const rating = $('[data-testid="hero-rating-bar__aggregate-rating__score"] span').first().text();
+    const year = $('.sc-acac9414-0 .ipc-inline-list__item').first().text();
+    const runtime = $('.sc-acac9414-0 .ipc-inline-list__item').last().text();
+    // const posterID = $('.ipc-poster .ipc-lockup-overlay.ipc-focusable').attr('href').match(/mediaviewer\/(.*)\//)[1];
+    const plot = $('[data-testid="plot"] span').first().text();
+    // const poster = await getPoster(`${movieUrl}/${imdbID}/mediaviewer/${posterID}`, posterID)
+    const poster = "https://m.media-amazon.com/images/M/MV5BMmMzOWNhNTYtYmY0My00OGJiLWIzNDUtZWRhNGY0NWFjNzFmXkEyXkFqcGdeQXVyNjUxMDQ0MTg@._V1_.jpg";
+
+    return {
+        title: title,
+        year: year,
+        runTime: runtime,
+        summary: plot,
+        rating: rating,
+        image: poster
+    }
 }
 
 module.exports = {
-    searchMovies
+    getIMDBId,
+    getMovie
 };

@@ -14,7 +14,9 @@ app.get('/', (req, res) => {
 
 // Basic route for search 
 app.get('/search/:name', async (req, res) => {
-    await scrapper.searchMovies(req.params.name);
+    const id = await scrapper.getIMDBId(req.params.name);
+    const movie = await scrapper.getMovie(id);
+    console.log(movie);
 });
 
 const port = process.env.PORT || 3000;
