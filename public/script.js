@@ -30,7 +30,8 @@ async function queryGPT(input) {
   async function getMovieDetails(name) {
     // get the correct search term using the fillers for spaces
     const searchterm = name.split(' ').join('%20');
-    const response = await fetch(`https://www.imdb.com/find/?q=${searchterm}`);
+    const response = await fetch(`http://localhost:3000/search/${searchterm}`);
     const body = await response.json();
+    console.log(body)
     return body;
   }

@@ -12,11 +12,11 @@ app.get('/', (req, res) => {
   });
 });
 
-// Basic route for search 
+// Basic route for searching movie details, we don't need anymore
 app.get('/search/:name', async (req, res) => {
     const id = await scrapper.getIMDBId(req.params.name);
     const movie = await scrapper.getMovie(id);
-    console.log(movie);
+    res.json(movie);
 });
 
 const port = process.env.PORT || 3000;

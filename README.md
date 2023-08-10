@@ -1,7 +1,11 @@
 # recamovie
 
-Next step is to scrap movie data from imdb
+Next step is to scrap movie data from imdb -> SOLVED
 
-Maybe add all the websites where you can wwach this movie as well... would be based af
+figure out issue with cors first -> SOLVED
 
-figure out issue with cors first 
+next step is to add movie elements to the DOM 
+
+IDEAS: 
+
+1) Maybe add all the websites where you can watch this movie as well... would be based af

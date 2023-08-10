@@ -40,6 +40,8 @@ async function getMovie(imdbID) {
     const runtime = $('.sc-acac9414-0 .ipc-inline-list__item').last().text();
     // const posterID = $('.ipc-poster .ipc-lockup-overlay.ipc-focusable').attr('href').match(/mediaviewer\/(.*)\//)[1];
     const plot = $('[data-testid="plot"] span').first().text();
+
+    // Add poster logic here 
     // const poster = await getPoster(`${movieUrl}/${imdbID}/mediaviewer/${posterID}`, posterID)
     const poster = "https://m.media-amazon.com/images/M/MV5BMmMzOWNhNTYtYmY0My00OGJiLWIzNDUtZWRhNGY0NWFjNzFmXkEyXkFqcGdeQXVyNjUxMDQ0MTg@._V1_.jpg";
 
