@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
-    <section class="text-gray-400 bg-gray-900 body-font relative">
+    <section class="text-gray-400 bg-gray-900 body-font relative h-full">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-12">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Rec a Movie</h1>
@@ -26,39 +26,149 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="h-1/6 w-4/12 border-2 rounded-lg m-auto">
-          <div class="flex font-serif">
-            <div class="flex-none w-52 relative">
-              <img src="https://m.media-amazon.com/images/M/MV5BMmMzOWNhNTYtYmY0My00OGJiLWIzNDUtZWRhNGY0NWFjNzFmXkEyXkFqcGdeQXVyNjUxMDQ0MTg@._V1_.jpg" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg" loading="lazy" />
-            </div>
-            <div class="flex-auto p-6">
-              <div class="flex flex-wrap items-baseline">
-                <h1 class="w-full flex-none mb-3 text-2xl leading-none">
-                  Perfect Blue
-                </h1>
-                <div class="flex-auto text-lg font-medium text-slate-500">
-                  $350.00
-                </div>
-                <div class="text-xs leading-6 font-medium uppercase text-slate-500">
-                  In stock
-                </div>
+          <span>
+
+          <div class="flex h-48 w-4/12 border-2 rounded-lg mx-auto mt-14">
+           <div id="cardPic" class="flex-row h-full max-w-fit">
+            <img class="h-full w-auto p-1 border-0 rounded-lg" src="https://m.media-amazon.com/images/M/MV5BMmMzOWNhNTYtYmY0My00OGJiLWIzNDUtZWRhNGY0NWFjNzFmXkEyXkFqcGdeQXVyNjUxMDQ0MTg@._V1_.jpg" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg" loading="lazy" />
+           </div>
+           <div id="cardInfo" class="flex-row h-full w-auto">
+            <div class="flex flex-wrap items-baseline">
+              <h1 class="w-full flex-none mb-3 text-2xl leading-none">
+                Perfect Blue
+              </h1>
+              <div class="flex-auto text-lg font-medium text-slate-500">
+                1H 22M
               </div>
-              <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+              <div class="text-xs leading-6 font-medium uppercase text-slate-500">
+                In stock
               </div>
-              <div class="flex space-x-4 mb-5 text-sm font-medium">
-                <div class="flex-auto flex space-x-4 pr-4">
+              <div class="flex text-sm font-small">
+                <div class="flex-auto">
                   <p>A pop singer gives up her career to become an actress, but she slowly goes insane when she starts being stalked by an obsessed fan and what seems to be a ghost of her past.
                   </p>
                 </div>
-                <button class="flex-none flex items-center justify-center w-12 h-12 text-slate-300 border border-slate-200" type="button" aria-label="Like">
-                  <svg width="20" height="20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
-                  </svg>
-                </button>
               </div>
             </div>
+           </div>
           </div>
+
+            <!-- <div class="h-64 w-4/12 border-2 rounded-lg mx-auto mt-14">
+            <div class="flex font-serif p-1 mt-0">
+              <div class="flex w-auto p-1 mt-0 mb-0">
+                <img class=" p-1 border-0 rounded-lg" src="https://m.media-amazon.com/images/M/MV5BMmMzOWNhNTYtYmY0My00OGJiLWIzNDUtZWRhNGY0NWFjNzFmXkEyXkFqcGdeQXVyNjUxMDQ0MTg@._V1_.jpg" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg" loading="lazy" />
+              </div>
+              <div class="flex-auto p-6">
+                <div class="flex flex-wrap items-baseline">
+                  <h1 class="w-full flex-none mb-3 text-2xl leading-none">
+                    Perfect Blue
+                  </h1>
+                  <div class="flex-auto text-lg font-medium text-slate-500">
+                    1H 22M
+                  </div>
+                  <div class="text-xs leading-6 font-medium uppercase text-slate-500">
+                    In stock
+                  </div>
+                </div>
+                <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+                </div>
+                <div class="flex space-x-4 mb-5 text-sm font-medium">
+                  <div class="flex-auto flex space-x-4 pr-4">
+                    <p>A pop singer gives up her career to become an actress, but she slowly goes insane when she starts being stalked by an obsessed fan and what seems to be a ghost of her past.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </span>
+          <!-- <span class="inline-grid grid-cols-3 gap-1"> -->
+            <!-- <span><div class="h-64 w-4/12 border-2 rounded-lg mx-auto mt-14">
+              <div class="block font-serif p-1">
+                <div class="flex w-auto h-auto relative border-1">
+                  <img class="block p-1 border-0 rounded-lg" src="https://m.media-amazon.com/images/M/MV5BMmMzOWNhNTYtYmY0My00OGJiLWIzNDUtZWRhNGY0NWFjNzFmXkEyXkFqcGdeQXVyNjUxMDQ0MTg@._V1_.jpg" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg" loading="lazy" />
+                </div>
+                <div class="flex-auto p-6">
+                  <div class="flex flex-wrap items-baseline">
+                    <h1 class="w-full flex-none mb-3 text-2xl leading-none">
+                      Perfect Blue
+                    </h1>
+                    <div class="flex-auto text-lg font-medium text-slate-500">
+                      1H 22M
+                    </div>
+                    <div class="text-xs leading-6 font-medium uppercase text-slate-500">
+                      In stock
+                    </div>
+                  </div>
+                  <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+                  </div>
+                  <div class="flex space-x-4 mb-5 text-sm font-medium">
+                    <div class="flex-auto flex space-x-4 pr-4">
+                      <p>A pop singer gives up her career to become an actress, but she slowly goes insane when she starts being stalked by an obsessed fan and what seems to be a ghost of her past.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div></span>
+            <span><div class="h-64 w-4/12 border-2 rounded-lg mx-auto mt-14">
+              <div class="inline-block font-serif p-1">
+                <div class="flex w-auto h-auto relative border-1">
+                  <img class="block p-1 border-0 rounded-lg" src="https://m.media-amazon.com/images/M/MV5BMmMzOWNhNTYtYmY0My00OGJiLWIzNDUtZWRhNGY0NWFjNzFmXkEyXkFqcGdeQXVyNjUxMDQ0MTg@._V1_.jpg" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg" loading="lazy" />
+                </div>
+                <div class="flex-auto p-6">
+                  <div class="flex flex-wrap items-baseline">
+                    <h1 class="w-full flex-none mb-3 text-2xl leading-none">
+                      Perfect Blue
+                    </h1>
+                    <div class="flex-auto text-lg font-medium text-slate-500">
+                      1H 22M
+                    </div>
+                    <div class="text-xs leading-6 font-medium uppercase text-slate-500">
+                      In stock
+                    </div>
+                  </div>
+                  <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+                  </div>
+                  <div class="flex space-x-4 mb-5 text-sm font-medium">
+                    <div class="flex-auto flex space-x-4 pr-4">
+                      <p>A pop singer gives up her career to become an actress, but she slowly goes insane when she starts being stalked by an obsessed fan and what seems to be a ghost of her past.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div></span>
+            <span>
+              <div class="h-64 w-4/12 border-2 rounded-lg mx-auto mt-14">
+              <div class="inline-block font-serif p-1">
+                <div class="flex w-auto h-auto relative border-1">
+                  <img class="block p-1 border-0 rounded-lg" src="https://m.media-amazon.com/images/M/MV5BMmMzOWNhNTYtYmY0My00OGJiLWIzNDUtZWRhNGY0NWFjNzFmXkEyXkFqcGdeQXVyNjUxMDQ0MTg@._V1_.jpg" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg" loading="lazy" />
+                </div>
+                <div class="flex-auto p-6">
+                  <div class="flex flex-wrap items-baseline">
+                    <h1 class="w-full flex-none mb-3 text-2xl leading-none">
+                      Perfect Blue
+                    </h1>
+                    <div class="flex-auto text-lg font-medium text-slate-500">
+                      1H 22M
+                    </div>
+                    <div class="text-xs leading-6 font-medium uppercase text-slate-500">
+                      In stock
+                    </div>
+                  </div>
+                  <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+                  </div>
+                  <div class="flex space-x-4 mb-5 text-sm font-medium">
+                    <div class="flex-auto flex space-x-4 pr-4">
+                      <p>A pop singer gives up her career to become an actress, but she slowly goes insane when she starts being stalked by an obsessed fan and what seems to be a ghost of her past.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div></span>
+          </span> -->
         </div>
       </section>
       
