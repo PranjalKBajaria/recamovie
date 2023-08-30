@@ -26,7 +26,7 @@ async function getPoster(imgUrl, imgID) {
     const body = await response.text();
     const $ = cheerio.load(body);
 
-    return $(`[data-image-id="${imgID}-curr"]`).attr('alt');
+    return $(`[data-image-id="${imgID}-curr"]`).attr('src');
 }
 
 async function getMovie(imdbID) {
@@ -38,12 +38,10 @@ async function getMovie(imdbID) {
     const rating = $('[data-testid="hero-rating-bar__aggregate-rating__score"] span').first().text();
     const year = $('.sc-acac9414-0 .ipc-inline-list__item').first().text();
     const runtime = $('.sc-acac9414-0 .ipc-inline-list__item').last().text();
-    // const posterID = $('.ipc-poster .ipc-lockup-overlay.ipc-focusable').attr('href').match(/mediaviewer\/(.*)\//)[1];
+    const posterID = $('.ipc-poster .ipc-lockup-overlay.ipc-focusable').attr('href').match(/mediaviewer\/(.*)\//)[1];
     const plot = $('[data-testid="plot"] span').first().text();
 
-    // Add poster logic here 
-    // const poster = await getPoster(`${movieUrl}/${imdbID}/mediaviewer/${posterID}`, posterID)
-    const poster = "https://m.media-amazon.com/images/M/MV5BMmMzOWNhNTYtYmY0My00OGJiLWIzNDUtZWRhNGY0NWFjNzFmXkEyXkFqcGdeQXVyNjUxMDQ0MTg@._V1_.jpg";
+    const poster = await getPoster(`${movieUrl}${imdbID}/mediaviewer/${posterID}`, posterID)
 
     return {
         title: title,
