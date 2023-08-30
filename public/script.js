@@ -11,10 +11,15 @@ const openAI = new openai.OpenAIApi(configuration);
 document.getElementById('findMovie').onclick = async () => {
     const prompt = document.querySelector('#movieInput').value;
     const recommendations = await queryGPT(prompt);
+    clearMovies();
     await recommendations.forEach( async rec => {
       const movie = await getMovieDetails(rec);
       addMovie(movie);
     })
+}
+
+function clearMovies() {
+  document.getElementById('recommendations').innerHTML = '';
 }
 
 
@@ -38,14 +43,17 @@ function addMovie(movie) {
   _div4.classList.add('flex', 'justify-center', 'text-center');
   const _h1 = document.createElement('h1');
   _h1.classList.add('w-full', 'mb-3', 'text-2xl', 'leading-none');
-  const _span1 = document.createElement('span');
-  _span1.id = 'title';
-  _span1.innerText = `${movie.title} `;
+  const _titleLink = document.createElement('a');
+  _titleLink.id = 'title';
+  _titleLink.target = '_blank';
+  _titleLink.href = movie.link;
+  _titleLink.className = 'hover:text-white';
+  _titleLink.innerText = `${movie.title} `;
   const _span2 = document.createElement('span');
   _span2.id = 'year';
-  _span2.innerText = movie.year;
+  _span2.innerText = `(${movie.year})`;
   _span2.className = 'text-xl';
-  _h1.appendChild(_span1);
+  _h1.appendChild(_titleLink);
   _h1.appendChild(_span2);
   _div4.appendChild(_h1);
   const _div5 = document.createElement('div');

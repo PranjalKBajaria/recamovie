@@ -30,7 +30,8 @@ async function getPoster(imgUrl, imgID) {
 }
 
 async function getMovie(imdbID) {
-    const response = await fetch(`${movieUrl}${imdbID}`);
+    const imdbLink = `${movieUrl}${imdbID}`;
+    const response = await fetch(imdbLink);
     const body = await response.text();
     const $ = cheerio.load(body);
 
@@ -49,7 +50,8 @@ async function getMovie(imdbID) {
         runTime: runtime,
         summary: plot,
         rating: rating,
-        image: poster
+        image: poster,
+        link: imdbLink
     }
 }
 
