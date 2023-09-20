@@ -1,7 +1,7 @@
 import openai from 'https://cdn.jsdelivr.net/npm/openai@3.3.0/+esm'
 
 const configuration = new openai.Configuration({
-  apiKey: "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",
+  apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
 });
 
 delete configuration.baseOptions.headers['User-Agent'];
